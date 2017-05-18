@@ -2,8 +2,8 @@
 # Maintainer: BlackEagle <ike.devolder@gmail.com>>
 
 pkgname=kodi-addon-visualization-shadertoy
-_commit=87de9f3
-pkgver=20170516.87de9f3
+_commit=8fc93dc
+pkgver=20170518.8fc93dc
 pkgrel=1
 pkgdesc="Shadertoy visualizer for Kodi"
 arch=('i686' 'x86_64')
