@@ -1,22 +1,22 @@
-# $Id$
 # Maintainer: BlackEagle <ike.devolder@gmail.com>>
 
 pkgname=kodi-addon-visualization-shadertoy
 epoch=1
-pkgver=1.1.5
+pkgver=1.1.8
+_codename=Leia
 pkgrel=1
 pkgdesc="Shadertoy visualizer for Kodi"
 arch=('x86_64')
-url='https://github.com/notspiff/visualization.shadertoy'
+url='https://github.com/xbmc/visualization.shadertoy'
 license=('GPL')
 groups=('kodi-addons' 'kodi-addons-visualization')
 depends=('kodi' 'p8-platform')
 makedepends=('cmake' 'kodi-dev')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/notspiff/visualization.shadertoy/archive/v$pkgver.tar.gz")
-sha512sums=('557cc9567707ab53c63537f760b552c4129f45a4c99346acf9d00f8fea5249af1a8af9ea6fc8587e7ab6e24c8a686356e5bacf0a2cb34dcc8b38059c36127e43')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/xbmc/visualization.shadertoy/archive/$pkgver-$_codename.tar.gz")
+sha512sums=('5cee18db177c0cc61bc46a4d457b559bd1a023d3ff51261eee8d4c4828df77571beda12dd726f30554bd16c7ad67e12d836c5a211a3d55321d92551eb337ddc6')
 
 build() {
-    cd "visualization.shadertoy-$pkgver"
+    cd "visualization.shadertoy-$pkgver-$_codename"
 	cmake \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_BUILD_TYPE=Release \
@@ -26,7 +26,7 @@ build() {
 }
 
 package() {
-    cd "visualization.shadertoy-$pkgver"
+    cd "visualization.shadertoy-$pkgver-$_codename"
 	make DESTDIR="$pkgdir/" install
 }
 
